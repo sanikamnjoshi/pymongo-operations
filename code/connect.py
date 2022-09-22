@@ -6,7 +6,7 @@ class Connect():
 
     def __init__(self):
         client = pymongo.MongoClient("mongodb://usr:pwd@db-server:port/")
-        # example: client = pymongo.MongoClient("mongodb://usr:pwd@localhost:27017/")
+        ### example: client = pymongo.MongoClient("mongodb://usr:pwd@localhost:27017/")
         db = client["db-name"]
         coll = db["collection-name"]
 
@@ -19,7 +19,7 @@ class Connect():
         doc = coll.find(query)
         list_doc = list(doc)
 
-        # sanity check
+        ### sanity check
         df = pd.DataFrame(list_doc)
         print(df.head)
 
